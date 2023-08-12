@@ -41,7 +41,7 @@ return packer.startup(function(use)
       }
     }) end
   }
-  
+
   -- treesitter
   use {
     'nvim-treesitter/nvim-treesitter',
@@ -53,7 +53,7 @@ return packer.startup(function(use)
       highlight = { enable = true }
     } end
   }
-  
+
   -- file explorer
   use {
     'ms-jpq/chadtree',
@@ -65,5 +65,13 @@ return packer.startup(function(use)
   use { 
     'ggandor/leap.nvim',
     config = function() require('leap').add_default_mappings() end
+  }
+
+  -- Common dependency
+  use "nvim-lua/plenary.nvim"
+
+  use {
+    'nvim-telescope/telescope.nvim', tag = '0.1.2',
+    requires = { {'nvim-lua/plenary.nvim'} }
   }
 end)
